@@ -27,7 +27,7 @@ Because it works on the text of the imports, it needs no running code and is fas
 
 ### The configuration
 
-`pyproject.toml`, lines 80 to 83:
+`pyproject.toml`, lines 81 to 84:
 
 ```toml
 [tool.importlinter]
@@ -36,7 +36,7 @@ include_external_packages = true
 
 ```
 
-`pyproject.toml`, lines 84 to 88:
+`pyproject.toml`, lines 85 to 89:
 
 ```toml
 [[tool.importlinter.contracts]]
@@ -46,7 +46,7 @@ layers = ["scheduling_agent.interfaces", "scheduling_agent.infrastructure", "sch
 
 ```
 
-`pyproject.toml`, lines 89 to 93:
+`pyproject.toml`, lines 90 to 94:
 
 ```toml
 [[tool.importlinter.contracts]]

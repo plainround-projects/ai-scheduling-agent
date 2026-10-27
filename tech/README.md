@@ -12,7 +12,7 @@ Run `make install` once. It builds a private Python environment in a folder call
 
 Code blocks marked `bash` are commands you type. Blocks marked `text` are what the computer printed. A note's "Walkthrough" quotes real lines from this repository's files, with the file name and line numbers above each quote.
 
-There are 41 notes.
+There are 52 notes.
 
 ## Read these three first (about ten minutes)
 
@@ -30,65 +30,76 @@ Read the language first, then the tools that build and run the project, then the
 | --- | --- | --- |
 | 1 | [python](python.md) | the language: how the code is laid out and every language feature used, with real examples |
 | 2 | [python-standard-library](python-standard-library.md) | every standard-library module the code imports and what it uses from each |
-| 3 | [regular-expressions](regular-expressions.md) | every text pattern in the code and data, taken apart piece by piece |
+| 3 | [python-source-domain](python-source-domain.md) | every line of the domain layer: the rules of the problem |
+| 4 | [python-source-application](python-source-application.md) | every line of the application layer: the use cases |
+| 5 | [python-source-infrastructure-part-1](python-source-infrastructure-part-1.md) | every line of the infrastructure layer: files, networks, databases, SDKs, settings (part 1) |
+| 6 | [python-source-infrastructure-part-2](python-source-infrastructure-part-2.md) | every line of the infrastructure layer: files, networks, databases, SDKs, settings (part 2) |
+| 7 | [python-source-interfaces](python-source-interfaces.md) | every line of the interfaces layer: the command line and the HTTP service |
+| 8 | [python-scripts](python-scripts.md) | every line of the scripts that generate the committed data files |
+| 9 | [regular-expressions](regular-expressions.md) | every text pattern in the code and data, taken apart piece by piece |
 
 ### Build and run
 
 | # | Note | What it covers |
 | --- | --- | --- |
-| 4 | [make](make.md) | the Makefile: every target and every line of every recipe |
-| 5 | [bash](bash.md) | the shell script and the shell commands inside the Makefile |
-| 6 | [git](git.md) | version control and the .gitignore file |
-| 7 | [pip-and-venv](pip-and-venv.md) | virtual environments and how packages are installed |
-| 8 | [uv](uv.md) | the tool that produced the lock files |
-| 9 | [requirements-lock-files](requirements-lock-files.md) | the two lock files and every package in them |
-| 10 | [setuptools](setuptools.md) | the build backend that installs the project |
-| 11 | [toml](toml.md) | the TOML file format |
-| 12 | [pyproject-toml](pyproject-toml.md) | every table and key of pyproject.toml |
-| 13 | [environment-variables](environment-variables.md) | settings in the environment: env.example, the readers, the Makefile |
-| 14 | [editorconfig](editorconfig.md) | the editor settings file |
+| 10 | [make](make.md) | the Makefile: every target and every line of every recipe |
+| 11 | [bash](bash.md) | the shell script and the shell commands inside the Makefile |
+| 12 | [git](git.md) | version control and the .gitignore file |
+| 13 | [pip-and-venv](pip-and-venv.md) | virtual environments and how packages are installed |
+| 14 | [uv](uv.md) | the tool that produced the lock files |
+| 15 | [requirements-lock-files](requirements-lock-files.md) | the two lock files and every package in them |
+| 16 | [setuptools](setuptools.md) | the build backend that installs the project |
+| 17 | [toml](toml.md) | the TOML file format |
+| 18 | [pyproject-toml](pyproject-toml.md) | every table and key of pyproject.toml |
+| 19 | [environment-variables](environment-variables.md) | settings in the environment: env.example, the readers, the Makefile |
+| 20 | [editorconfig](editorconfig.md) | the editor settings file |
 
 ### Runtime pieces
 
 | # | Note | What it covers |
 | --- | --- | --- |
-| 15 | [processes-signals-and-threads](processes-signals-and-threads.md) | processes, signals, exit codes, threads and locks, and the tests that kill programs |
-| 16 | [python-logging](python-logging.md) | structured logfmt logging |
-| 17 | [curl-and-http](curl-and-http.md) | HTTP requests and answers, and the curl command |
-| 18 | [httpx](httpx.md) | the HTTP client library, and how tests fake the network |
-| 19 | [anthropic-sdk](anthropic-sdk.md) | the Claude SDK adapter |
-| 20 | [ollama](ollama.md) | local models, the OpenAI-compatible API and embeddings |
-| 21 | [pydantic](pydantic.md) | data validation models |
-| 22 | [json-schema](json-schema.md) | describing and checking the shape of JSON |
-| 23 | [fastapi](fastapi.md) | the web framework behind the HTTP services |
-| 24 | [uvicorn](uvicorn.md) | the web server that runs them |
-| 25 | [sqlite](sqlite.md) | the file database, transactions, write-ahead logging, idempotency keys |
-| 26 | [sql](sql.md) | every SQL file, statement by statement |
-| 27 | [docker](docker.md) | containers and images |
-| 28 | [dockerfile](dockerfile.md) | every Dockerfile instruction |
-| 29 | [docker-compose](docker-compose.md) | every key of docker-compose.yml |
+| 21 | [processes-signals-and-threads](processes-signals-and-threads.md) | processes, signals, exit codes, threads and locks, and the tests that kill programs |
+| 22 | [python-logging](python-logging.md) | structured logfmt logging |
+| 23 | [curl-and-http](curl-and-http.md) | HTTP requests and answers, and the curl command |
+| 24 | [httpx](httpx.md) | the HTTP client library, and how tests fake the network |
+| 25 | [anthropic-sdk](anthropic-sdk.md) | the Claude SDK adapter |
+| 26 | [ollama](ollama.md) | local models, the OpenAI-compatible API and embeddings |
+| 27 | [pydantic](pydantic.md) | data validation models |
+| 28 | [json-schema](json-schema.md) | describing and checking the shape of JSON |
+| 29 | [fastapi](fastapi.md) | the web framework behind the HTTP services |
+| 30 | [uvicorn](uvicorn.md) | the web server that runs them |
+| 31 | [sqlite](sqlite.md) | the file database, transactions, write-ahead logging, idempotency keys |
+| 32 | [sql](sql.md) | every SQL file, statement by statement |
+| 33 | [docker](docker.md) | containers and images |
+| 34 | [dockerfile](dockerfile.md) | every Dockerfile instruction |
+| 35 | [docker-compose](docker-compose.md) | every key of docker-compose.yml |
 
 ### Data formats
 
 | # | Note | What it covers |
 | --- | --- | --- |
-| 30 | [json](json.md) | the JSON files, key by key |
-| 31 | [jsonl](jsonl.md) | JSON Lines files, recordings and embeddings |
-| 32 | [yaml](yaml.md) | the YAML file format |
-| 33 | [markdown](markdown.md) | the Markdown files and what each is for |
-| 34 | [mermaid](mermaid.md) | the architecture diagram, line by line |
+| 36 | [json](json.md) | the JSON files, key by key |
+| 37 | [jsonl](jsonl.md) | JSON Lines files, recordings and embeddings |
+| 38 | [yaml](yaml.md) | the YAML file format |
+| 39 | [markdown](markdown.md) | the Markdown files and what each is for |
+| 40 | [data-files](data-files.md) | every record of the JSON Lines data files |
+| 41 | [sql-seed-data](sql-seed-data.md) | every row of the seed SQL |
+| 42 | [mermaid](mermaid.md) | the architecture diagram, line by line |
 
 ### Tests and checks
 
 | # | Note | What it covers |
 | --- | --- | --- |
-| 35 | [pytest](pytest.md) | the test runner, markers, fixtures and every test construct used |
-| 36 | [coverage](coverage.md) | measuring how much code the tests run, and the 95 percent gate |
-| 37 | [ruff](ruff.md) | the linter and formatter, and every rule family switched on |
-| 38 | [mypy](mypy.md) | the type checker and what strict mode requires |
-| 39 | [import-linter](import-linter.md) | the architecture rules that fail the build |
-| 40 | [pip-audit](pip-audit.md) | the check for known vulnerabilities in the locked packages |
-| 41 | [github-actions](github-actions.md) | the CI workflow, line by line |
+| 43 | [python-tests-unit-part-1](python-tests-unit-part-1.md) | every unit test, line by line (part 1) |
+| 44 | [python-tests-unit-part-2](python-tests-unit-part-2.md) | every unit test, line by line (part 2) |
+| 45 | [python-tests-system](python-tests-system.md) | the shared test helpers and every process, end-to-end and live test, line by line |
+| 46 | [pytest](pytest.md) | the test runner, markers, fixtures and every test construct used |
+| 47 | [coverage](coverage.md) | measuring how much code the tests run, and the 95 percent gate |
+| 48 | [ruff](ruff.md) | the linter and formatter, and every rule family switched on |
+| 49 | [mypy](mypy.md) | the type checker and what strict mode requires |
+| 50 | [import-linter](import-linter.md) | the architecture rules that fail the build |
+| 51 | [pip-audit](pip-audit.md) | the check for known vulnerabilities in the locked packages |
+| 52 | [github-actions](github-actions.md) | the CI workflow, line by line |
 
 ## How each note is built
 

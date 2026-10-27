@@ -29,7 +29,7 @@ Python lets a tool register a *trace function* that is called on every line exec
 
 ### The settings in `pyproject.toml`
 
-`pyproject.toml`, lines 72 to 74:
+`pyproject.toml`, lines 73 to 75:
 
 ```toml
 [tool.coverage.run]
@@ -37,7 +37,7 @@ source = ["scheduling_agent"]
 branch = true
 ```
 
-`pyproject.toml`, lines 76 to 78:
+`pyproject.toml`, lines 77 to 79:
 
 ```toml
 [tool.coverage.report]

@@ -35,8 +35,8 @@ A scheduling assistant that books, moves and cancels meetings on a sample calend
 | **Planned hours** | 14 |
 | **Level** | Intermediate |
 | **Architecture** | [ARCHITECTURE.md](ARCHITECTURE.md), decisions in [docs/adr](docs/adr) |
+| **Technology notes** | [tech/README.md](tech/README.md), 41 notes that teach every technology used here from zero |
 
-## Read this first: which model drives the agent
 ```
 
 - `# Title` (one `#` and a space) is a first-level heading, the title of the page. `##` is second level, `###` third, down to `######` for sixth level.
