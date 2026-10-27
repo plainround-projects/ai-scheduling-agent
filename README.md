@@ -162,6 +162,13 @@ The dependency rule (domain depends on nothing; application on domain; infrastru
 - **`RecordingMissing` or a missing embedding:** the remembered fact text changed, so the recorded vector no longer matches. Run `make record` with ollama serving `nomic-embed-text`.
 - **A run is `awaiting_approval` and exits with code 5:** that is the gate working; `agent pending`, then `agent approve <id> --resume`.
 
+## Verification notes
+
+Verified on 2026-10-27 with `make up`, `make run`, `make test`, `make lint`, `make audit` and `make down`, in the repository and again in a fresh clone.
+
+- **Timing figures** (latencies, durations, the cost-versus-latency ratios) were recorded or measured on a machine whose load average was between 35 and 180, so they support ratios, not service levels. Rerun for clean figures: `make record`.
+- **Docker:** the calendar image built and answered `/health` on 2026-10-27. Nothing is pending.
+
 ## Author and license
 
 Written by Sumit Srivastava. Released under the MIT License, see [LICENSE](LICENSE). Changes are in [CHANGELOG.md](CHANGELOG.md).
