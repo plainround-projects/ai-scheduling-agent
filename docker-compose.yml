@@ -1,0 +1,21 @@
+# The calendar service in a container. `make up` runs the same service as a local process instead; use this file to
+# check the image or to run the service somewhere that has no Python environment.
+name: ai-scheduling-agent
+
+services:
+  calendar:
+    build: .
+    ports:
+      - "8090:8090"
+    environment:
+      CALENDAR_ALLOW_RESET: "on"       # demo and test aid behind POST /admin/reset; leave it off anywhere real
+    volumes:
+      - calendar-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8090/health', timeout=3).status == 200 else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  calendar-data:
