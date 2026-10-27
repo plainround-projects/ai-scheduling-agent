@@ -8,6 +8,7 @@ A scheduling assistant that books, moves and cancels meetings on a sample calend
 | **Planned hours** | 14 |
 | **Level** | Intermediate |
 | **Architecture** | [ARCHITECTURE.md](ARCHITECTURE.md), decisions in [docs/adr](docs/adr) |
+| **Technology notes** | [tech/README.md](tech/README.md), 41 notes that teach every technology used here from zero |
 
 ## Read this first: which model drives the agent
 
@@ -151,6 +152,7 @@ data/                tasks.jsonl (30 tasks with their expected end state).
 prompts/             agent/v1.md and CHANGELOG.md.
 scripts/             make_calendar_seed.py and make_tasks.py (regenerate the data), pull_model.sh.
 docs/adr/            six decision records.
+tech/                one note per technology, from zero (start at tech/README.md).
 ```
 
 The dependency rule (domain depends on nothing; application on domain; infrastructure and interfaces on both; nothing on interfaces) is enforced by `make lint` through import-linter. A second contract forbids `domain` and `application` from importing `anthropic`, `httpx`, `openai` or any HTTP framework.
