@@ -31,6 +31,8 @@ Ports and adapters (hexagonal), in four folders, with two systems in one reposit
 
 ## Data flow
 
+Drawn versions of this figure and of the walk-through: [the architecture](docs/diagrams/architecture.svg) and [one run](docs/diagrams/flow.svg).
+
 ```mermaid
 flowchart LR
     P[Person] -->|task| A[Scheduling agent<br/>12 steps, token and time caps]

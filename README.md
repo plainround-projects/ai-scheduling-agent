@@ -10,6 +10,24 @@ A scheduling assistant that books, moves and cancels meetings on a sample calend
 | **Architecture** | [ARCHITECTURE.md](ARCHITECTURE.md), decisions in [docs/adr](docs/adr) |
 | **Technology notes** | [tech/README.md](tech/README.md), 52 notes that teach every technology used here from zero |
 
+## Architecture
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/architecture-dark.svg">
+  <img alt="A Person runs the agent CLI. The SchedulingAgent recalls facts from MemoryService, calls the ChatModel stand-in, and uses the ToolBox, whose CalendarClient calls the Calendar API with an Idempotency-Key, and the calendar stores events and keys together. Approvals, Checkpoints, the Audit log and Memory sit in the agent's own SQLite database." src="docs/diagrams/architecture.svg">
+</picture>
+
+Reads are free, but every write is a proposal bound to an approval and sent with a key built from the run and the step, so a retry cannot book twice.
+
+## How one run flows
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/flow-dark.svg">
+  <img alt="One booking in eight rows: the person starts a run, the model proposes a booking that is held as a pending approval, the person approves and the agent writes with its key, with an amber row for a crash after the write that the same key makes harmless." src="docs/diagrams/flow.svg">
+</picture>
+
+A booking waits for a person's approval before it touches the calendar, and the amber row shows a crash after the write replayed with the same key without a second event.
+
 ## Read this first: which model drives the agent
 
 No model key was available when this was built, and the lesson's properties (a write needs a yes, a crash cannot double-book, a budget stops a loop, memory is applied) belong to the harness around the model, not to a model. So the default `MODEL_PROVIDER=scripted` is a **deterministic rule-based stand-in** that speaks the same tool-calling protocol a language model does. It is not a language model. The 90 of 90 task attempts below show that the machinery is right; they say nothing about how well any language model schedules. The Claude adapter (`MODEL_PROVIDER=anthropic`) and the local open-weight adapter (`MODEL_PROVIDER=openai-compatible`, for example `qwen2.5:1.5b` on ollama) are written, unit-tested with mock transports, and exercised only by the opt-in `make test-live`; running the 30 tasks with one of them is the experiment that measures a model. See [ADR 0006](docs/adr/0006-a-deterministic-stand-in-for-the-model.md).
